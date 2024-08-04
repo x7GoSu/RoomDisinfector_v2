@@ -3,19 +3,19 @@ using Verse;
 
 namespace RoomDisinfector_v2
 {
-    public class CompProperties_PowerCleanliness : CompProperties
+    public class CompProperties_PoweredCleanliness : CompProperties
     {
         public float secondaryCleanliness;
 
-        public CompProperties_PowerCleanliness()
+        public CompProperties_PoweredCleanliness()
         {
-            this.compClass = typeof(CompPowerCleanliness);
+            this.compClass = typeof(CompPoweredCleanliness);
         }
     }
 
-    public class CompPowerCleanliness : ThingComp
+    public class CompPoweredCleanliness : ThingComp
     {
-        public CompProperties_PowerCleanliness Props => (CompProperties_PowerCleanliness)props;
+        public CompProperties_PoweredCleanliness Props => (CompProperties_PoweredCleanliness)props;
     }
 
     public class StatPart_PwrCleanliness : StatPart
@@ -27,7 +27,7 @@ namespace RoomDisinfector_v2
                 var powerComp = building.TryGetComp<CompPowerTrader>();
                 if (powerComp != null && powerComp.PowerOn)
                 {
-                    var cleanlinessComp = building.TryGetComp<CompPowerCleanliness>();
+                    var cleanlinessComp = building.TryGetComp<CompPoweredCleanliness>();
                     if (cleanlinessComp != null)
                     {
                         val += cleanlinessComp.Props.secondaryCleanliness;
@@ -43,7 +43,7 @@ namespace RoomDisinfector_v2
                 var powerComp = building.TryGetComp<CompPowerTrader>();
                 if (powerComp != null && powerComp.PowerOn)
                 {
-                    var cleanlinessComp = building.TryGetComp<CompPowerCleanliness>();
+                    var cleanlinessComp = building.TryGetComp<CompPoweredCleanliness>();
                     if (cleanlinessComp != null)
                     {
                         return $"Powered cleanliness bonus: +{cleanlinessComp.Props.secondaryCleanliness}";
