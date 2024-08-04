@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+ <StatDef>
+    <defName>Cleanliness</defName>
+    <parts>
+      <li Class="RoomDisinfector_v2.StatPart_PwrCleanliness"/>
+    </parts>
+	<label>Powered Cleanliness</label>
+    <description>Room Sterilization</description>
+    <category>Building</category>
+    <defaultBaseValue>0.0</defaultBaseValue>
+    <minValue>0.0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>0</displayPriorityInCategory>
+  </StatDef>
+      </Defs>
